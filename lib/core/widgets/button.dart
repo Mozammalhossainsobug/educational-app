@@ -125,7 +125,7 @@ class Button extends StatelessWidget {
                 ? ElevatedButton.styleFrom(
                     elevation: 0,
                     fixedSize: Size(width, height),
-                    backgroundColor: background ?? UIColors.pineGreen,
+                    backgroundColor: background ?? UIColors.branda,
                     disabledBackgroundColor: UIColors.antiFlashWhite,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(borderRadius),
@@ -138,8 +138,7 @@ class Button extends StatelessWidget {
                         ? UIColors.antiFlashWhite
                         : background ?? UIColors.transparent,
                     side: BorderSide(
-                      color:
-                          isLoading ? UIColors.transparent : UIColors.pineGreen,
+                      color: isLoading ? UIColors.transparent : UIColors.branda,
                     ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(borderRadius),
@@ -155,7 +154,7 @@ class Button extends StatelessWidget {
                       height: 30,
                       width: 30,
                       child: CircularProgressIndicator(
-                        color: UIColors.pineGreen,
+                        color: UIColors.branda,
                       ),
                     ),
                   )

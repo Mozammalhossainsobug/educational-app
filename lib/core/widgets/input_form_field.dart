@@ -8,7 +8,6 @@ import 'package:intl/intl.dart';
 
 const Color _borderColor = Color(0xFFCDD1D0);
 const Color _fillColor = Colors.white;
-const double _height = 60;
 const double _bottomMargin = 30;
 const BorderType _borderType = BorderType.bottom;
 
@@ -375,13 +374,13 @@ class _InputFormFieldState extends State<InputFormField> {
           ? password.hidePasswordIcon ??
               Icon(
                 Icons.visibility_off,
-                color: UIColors.pineGreen,
+                color: UIColors.branda,
                 size: 16.sp,
               )
           : password.showPasswordIcon ??
               Icon(
                 Icons.visibility,
-                color: UIColors.pineGreen,
+                color: UIColors.branda,
                 size: 16.sp,
               ),
       splashColor: Colors.transparent,

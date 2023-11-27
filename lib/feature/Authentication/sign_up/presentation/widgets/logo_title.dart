@@ -1,25 +1,36 @@
 import 'package:education_app/core/utils/assets.dart';
 import 'package:education_app/core/utils/colors.dart';
-import 'package:education_app/core/widgets/input_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LogoAndTitle extends StatelessWidget {
-  const LogoAndTitle({super.key});
+  const LogoAndTitle({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Center(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 14.0),
-            child: Image.asset(
-              Assets.appLogo,
-            ),
+          SizedBox(
+            height: size.height * .1,
           ),
-          const Text(
-            'Create an Account',
-            style: TextStyle(
+          Image.asset(
+            Assets.appLogo,
+            scale: 4,
+          ),
+          SizedBox(
+            height: size.height * .05,
+          ),
+          Text(
+            title,
+            style: const TextStyle(
               color: UIColors.branda,
               fontWeight: FontWeight.bold,
               fontSize: 18,

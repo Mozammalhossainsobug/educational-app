@@ -1,4 +1,5 @@
 import 'package:education_app/core/route/route.dart';
+import 'package:education_app/feature/Authentication/sign_in/presentation/pages/sign_in_page.dart';
 import 'package:education_app/feature/Authentication/sign_up/presentation/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,11 @@ class RouteGenerator {
           builder: (_) => const SignUpPage(),
         );
 
-      // case Routes.signIn:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const SignInPage(),
-      //   );
-      //
+      case Routes.signIn:
+        return MaterialPageRoute(
+          builder: (_) => const SignInPage(),
+        );
+
       // case Routes.home:
       //   return MaterialPageRoute(
       //     builder: (_) => const HomePage(),

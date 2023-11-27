@@ -1,7 +1,7 @@
 class Assets {
   static const String imagePath = 'assets/images';
 
-  static const String appLogo = '$imagePath/appLogo.png';
+  static const String appLogo = '$imagePath/appLogo.jpeg';
   static const String googleLogo = '$imagePath/google_logo.svg';
   static const String facebookLogo = '$imagePath/facebook_logo.svg';
   static const String appleLogo = '$imagePath/apple_logo.svg';
