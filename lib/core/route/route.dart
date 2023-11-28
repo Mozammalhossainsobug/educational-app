@@ -1,7 +1,7 @@
 class Routes {
   static const String signUp = '/sign_up';
   static const String signIn = '/sign_in';
-  static const String home = '/home';
+  static const String dashboard = '/dashboard';
   static const String forgotPassword = '/forgot_password';
   static const String welcome = '/welcome';
   static const String webView = '/web_view_stack';
