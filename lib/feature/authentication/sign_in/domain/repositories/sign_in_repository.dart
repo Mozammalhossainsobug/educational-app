@@ -1,5 +1,5 @@
-import 'package:education_app/feature/Authentication/sign_in/data/data_sources/sign_in_data_source.dart';
-import 'package:education_app/feature/Authentication/sign_in/data/repositories/sign_in_repository_impl.dart';
+import 'package:education_app/feature/authentication/sign_in/data/data_sources/sign_in_data_source.dart';
+import 'package:education_app/feature/authentication/sign_in/data/repositories/sign_in_repository_impl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
