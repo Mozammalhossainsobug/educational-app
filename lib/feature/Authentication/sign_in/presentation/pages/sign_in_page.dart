@@ -5,6 +5,7 @@ import 'package:education_app/core/widgets/button.dart';
 import 'package:education_app/feature/Authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
 import 'package:education_app/feature/Authentication/sign_in/presentation/widgets/sign_in_form_builder.dart';
 import 'package:education_app/feature/Authentication/sign_up/presentation/widgets/logo_title.dart';
+import 'package:education_app/feature/dashboard/presentation/riverpods/user_course_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,12 +37,9 @@ class _SignInPageState extends ConsumerState<SignInPage> {
             text: next.error,
           );
         } else if (next.status == BaseStatus.success) {
-          QuickAlert.show(
-            context: context,
-            type: QuickAlertType.success,
-            title: 'Congratulations',
-            text: 'Log In Successful',
-          );
+          ref.read(userCourseProvider.notifier).getAllCourse();
+          final state = ref.watch(userCourseProvider);
+          _navigateToDashboardPage(state.data);
         }
       },
     );
@@ -98,5 +96,13 @@ class _SignInPageState extends ConsumerState<SignInPage> {
 
   void _navigateToSignUpPage() {
     Navigator.pushNamed(context, Routes.signUp);
+  }
+
+  void _navigateToDashboardPage(dynamic course) {
+    Navigator.pushNamed(
+      context,
+      Routes.dashboard,
+      arguments: course,
+    );
   }
 }

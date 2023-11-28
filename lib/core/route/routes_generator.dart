@@ -1,6 +1,8 @@
 import 'package:education_app/core/route/route.dart';
 import 'package:education_app/feature/Authentication/sign_in/presentation/pages/sign_in_page.dart';
 import 'package:education_app/feature/Authentication/sign_up/presentation/pages/sign_up_page.dart';
+import 'package:education_app/feature/dashboard/domain/entities/course_entity.dart';
+import 'package:education_app/feature/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -18,10 +20,12 @@ class RouteGenerator {
           builder: (_) => const SignInPage(),
         );
 
-      // case Routes.home:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const HomePage(),
-      //   );
+      case Routes.dashboard:
+        return MaterialPageRoute(
+          builder: (_) => DashboardPage(
+            courses: routeSettings.arguments! as List<CourseEntity>,
+          ),
+        );
       //
       // case Routes.forgotPassword:
       //   return MaterialPageRoute(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class UIColors {
   static const Color branda = Color(0xFF66328E);
+  static const Color ligtBranda = Color(0xFFC058D0);
   static const Color antiFlashWhite = Color(0xFFF2F7F8);
   static const Color platinum = Color(0xffD9D9D9);
   static const Color timberWolf = Color(0xffCDD1D0);
