@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'sign_in_data_source_impl.dart';
 
-final signInDataSourceProvider = Provider<SignInDataSource>(
+final signInDataSourceProvider = Provider<SignInDataSourceImp>(
   (ref) => SignInDataSourceImp(),
 );
 

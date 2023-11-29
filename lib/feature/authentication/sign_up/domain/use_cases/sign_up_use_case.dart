@@ -1,4 +1,4 @@
-import 'package:education_app/feature/Authentication/sign_up/domain/repositories/repository.dart';
+import 'package:education_app/feature/authentication/sign_up/domain/repositories/repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

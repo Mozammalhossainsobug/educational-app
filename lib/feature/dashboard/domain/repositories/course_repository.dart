@@ -3,7 +3,7 @@ import 'package:education_app/feature/dashboard/data/repositories/user_course_re
 import 'package:education_app/feature/dashboard/domain/entities/course_entity.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final userCourseRepositoryProvider = Provider<UserCourseRepository>(
+final userCourseRepositoryProvider = Provider<UserCourseRepositoryImp>(
   (ref) {
     final dataSource = ref.read(userCourseDataSourceProvider);
     return UserCourseRepositoryImp(
