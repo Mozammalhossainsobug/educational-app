@@ -56,7 +56,6 @@ class _PlayListPageState extends State<PlayListPage> {
 
   void _playNextVideo() {
     if (_currentIndex < widget.playlist.length - 1) {
-      completedModule = widget.playlist.length;
       setState(() {
         _videoPlayerController.pause();
         _playPauseButtonIcon = Icons.play_arrow_outlined;
@@ -116,36 +115,6 @@ class _PlayListPageState extends State<PlayListPage> {
     String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
     String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
     return "$twoDigitMinutes:$twoDigitSeconds";
-  }
-
-  void showBookmarks() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Bookmarks'),
-          content: Column(
-            children: List.generate(
-              bookmarks.length,
-              (index) => ListTile(
-                title: Text(
-                  'Bookmark ${index + 1}',
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  _startFromBookmark(index);
-                },
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  void _startFromBookmark(int index) {
-    _videoPlayerController.seekTo(bookmarks[index]);
-    _videoPlayerController.play();
   }
 
   @override
