@@ -110,20 +110,25 @@ class _VideoInfoWidgetState extends State<VideoInfoWidget> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return SingleChildScrollView(
-          child: AlertDialog(
-            title: const Text('Bookmarks'),
-            content: Column(
-              children: List.generate(
-                widget.bookmarks.length,
-                (index) => ListTile(
-                  title: Text(
-                    'Bookmark ${index + 1}',
+        return GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: SingleChildScrollView(
+            child: AlertDialog(
+              title: const Text('Bookmarks'),
+              content: Column(
+                children: List.generate(
+                  widget.bookmarks.length,
+                  (index) => ListTile(
+                    title: Text(
+                      'Bookmark ${index + 1}',
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      _startFromBookmark(index);
+                    },
                   ),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                    _startFromBookmark(index);
-                  },
                 ),
               ),
             ),
