@@ -8,5 +8,6 @@ class CourseModel extends CourseEntity {
     required super.chapter,
     required super.finished,
     required super.item,
+    required super.playlist,
   });
 }

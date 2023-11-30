@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:education_app/feature/playlist/domain/entities/video_entity.dart';
+
 class CourseEntity {
   CourseEntity({
     required this.name,
@@ -8,6 +10,7 @@ class CourseEntity {
     required this.chapter,
     required this.finished,
     required this.item,
+    required this.playlist,
   });
 
   String imageUrl;
@@ -16,4 +19,5 @@ class CourseEntity {
   int chapter;
   double finished;
   int item;
+  List<VideoEntity> playlist;
 }

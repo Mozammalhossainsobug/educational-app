@@ -132,7 +132,10 @@ class UserCourses extends ConsumerWidget {
                                 child: GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
-                                        context, Routes.playlist);
+                                      context,
+                                      Routes.playlist,
+                                      arguments: course.playlist,
+                                    );
                                   },
                                   child: CircleAvatar(
                                     radius: 25.h,

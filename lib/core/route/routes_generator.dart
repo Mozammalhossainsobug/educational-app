@@ -3,6 +3,7 @@ import 'package:education_app/feature/Authentication/sign_in/presentation/pages/
 import 'package:education_app/feature/Authentication/sign_up/presentation/pages/sign_up_page.dart';
 import 'package:education_app/feature/dashboard/domain/entities/course_entity.dart';
 import 'package:education_app/feature/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:education_app/feature/playlist/domain/entities/video_entity.dart';
 import 'package:education_app/feature/playlist/presentation/pages/playlist_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,9 @@ class RouteGenerator {
 
       case Routes.playlist:
         return MaterialPageRoute(
-          builder: (_) => const PlayListPage(),
+          builder: (_) => PlayListPage(
+            playlist: routeSettings.arguments! as List<VideoEntity>,
+          ),
         );
 
       // case Routes.welcome:
