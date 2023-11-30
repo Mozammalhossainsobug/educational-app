@@ -61,7 +61,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
             width: size.width * .9,
             onPressed: () => notifier.signUp(),
             isLoading: state.status == BaseStatus.loading,
-            label: 'SIGN UP',
+            label: 'LOG IN',
             background: UIColors.branda,
           ),
           Padding(
