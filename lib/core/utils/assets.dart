@@ -7,7 +7,8 @@ class Assets {
       '$imagePath/background_top_offer.png';
   static const String offerBackgroundBottom =
       '$imagePath/background_bottom_offer.png';
-  static const String backIcon = '$imagePath/back_icon.svg';
+  static const String backIcon = '$imagePath/back_icon.png';
+  static const String forwardIcon = '$imagePath/forward_icon.png';
   static const String designOffer = '$imagePath/design_offer.png';
   static const String reactJsCourse = '$imagePath/react_js_course_cover.png';
   static const String javascriptCourse =

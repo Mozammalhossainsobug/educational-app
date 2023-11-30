@@ -1,3 +1,4 @@
+import 'package:education_app/core/route/route.dart';
 import 'package:education_app/core/utils/colors.dart';
 import 'package:education_app/feature/dashboard/domain/entities/course_entity.dart';
 import 'package:flutter/material.dart';
@@ -128,11 +129,20 @@ class UserCourses extends ConsumerWidget {
                               Positioned(
                                 bottom: 40.h,
                                 right: 10.h,
-                                child: CircleAvatar(
-                                  radius: 25.h,
-                                  child: Icon(
-                                    Icons.play_arrow,
-                                    size: 30.h,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      Routes.playlist,
+                                      arguments: course.playlist,
+                                    );
+                                  },
+                                  child: CircleAvatar(
+                                    radius: 25.h,
+                                    child: Icon(
+                                      Icons.play_arrow,
+                                      size: 30.h,
+                                    ),
                                   ),
                                 ),
                               ),

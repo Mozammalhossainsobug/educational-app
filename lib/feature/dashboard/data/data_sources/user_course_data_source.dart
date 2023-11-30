@@ -1,11 +1,10 @@
-import 'package:education_app/core/utils/assets.dart';
 import 'package:education_app/feature/dashboard/data/models/course_model.dart';
-import 'package:flutter/material.dart';
+import 'package:education_app/feature/playlist/domain/entities/video_entity.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'user_course_data_source_impl.dart';
 
-final userCourseDataSourceProvider = Provider<UserCourseDataSource>(
+final userCourseDataSourceProvider = Provider<UserCourseDataSourceImp>(
   (ref) => UserCourseDataSourceImp(),
 );
 

@@ -1,7 +1,6 @@
 import 'package:education_app/core/utils/colors.dart';
 import 'package:education_app/core/widgets/input_form_field.dart';
-import 'package:education_app/feature/Authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
-import 'package:education_app/feature/Authentication/sign_up/presentation/riverpods/sign_up_provider.dart';
+import 'package:education_app/feature/authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

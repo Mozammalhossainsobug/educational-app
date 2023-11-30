@@ -1,17 +1,11 @@
-import 'package:education_app/core/base/state.dart';
-import 'package:education_app/core/utils/assets.dart';
 import 'package:education_app/core/utils/colors.dart';
 import 'package:education_app/core/widgets/input_form_field.dart';
-import 'package:education_app/feature/Authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
 import 'package:education_app/feature/dashboard/domain/entities/course_entity.dart';
-import 'package:education_app/feature/dashboard/domain/use_cases/user_courses_use_case.dart';
-import 'package:education_app/feature/dashboard/presentation/riverpods/user_course_provider.dart';
 import 'package:education_app/feature/dashboard/presentation/widgets/introduction_widget.dart';
 import 'package:education_app/feature/dashboard/presentation/widgets/offer_card_widget.dart';
 import 'package:education_app/feature/dashboard/presentation/widgets/user_courses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashboardPage extends ConsumerStatefulWidget {
   const DashboardPage({super.key, required this.courses});

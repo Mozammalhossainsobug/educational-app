@@ -2,9 +2,9 @@ import 'package:education_app/core/base/state.dart';
 import 'package:education_app/core/route/route.dart';
 import 'package:education_app/core/utils/colors.dart';
 import 'package:education_app/core/widgets/button.dart';
-import 'package:education_app/feature/Authentication/sign_up/presentation/riverpods/sign_up_provider.dart';
-import 'package:education_app/feature/Authentication/sign_up/presentation/widgets/logo_title.dart';
-import 'package:education_app/feature/Authentication/sign_up/presentation/widgets/sign_up_form_builder.dart';
+import 'package:education_app/feature/authentication/sign_up/presentation/riverpods/sign_up_provider.dart';
+import 'package:education_app/feature/authentication/sign_up/presentation/widgets/logo_title.dart';
+import 'package:education_app/feature/authentication/sign_up/presentation/widgets/sign_up_form_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickalert/models/quickalert_type.dart';
@@ -35,6 +35,12 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
             text: next.error,
           );
         } else if (next.status == BaseStatus.success) {
+          QuickAlert.show(
+            context: context,
+            type: QuickAlertType.success,
+            title: 'Congratulations',
+            text: next.error,
+          );
           _navigateToSignInPage();
         }
       },
@@ -84,6 +90,6 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
   }
 
   void _navigateToSignInPage() {
-    Navigator.pushNamed(context, Routes.signIn);
+    Navigator.popAndPushNamed(context, Routes.signIn);
   }
 }

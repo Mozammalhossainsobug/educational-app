@@ -2,9 +2,9 @@ import 'package:education_app/core/base/state.dart';
 import 'package:education_app/core/route/route.dart';
 import 'package:education_app/core/utils/colors.dart';
 import 'package:education_app/core/widgets/button.dart';
-import 'package:education_app/feature/Authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
-import 'package:education_app/feature/Authentication/sign_in/presentation/widgets/sign_in_form_builder.dart';
-import 'package:education_app/feature/Authentication/sign_up/presentation/widgets/logo_title.dart';
+import 'package:education_app/feature/authentication/sign_in/presentation/riverpods/sign_in_provider.dart';
+import 'package:education_app/feature/authentication/sign_in/presentation/widgets/sign_in_form_builder.dart';
+import 'package:education_app/feature/authentication/sign_up/presentation/widgets/logo_title.dart';
 import 'package:education_app/feature/dashboard/presentation/riverpods/user_course_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -95,11 +95,11 @@ class _SignInPageState extends ConsumerState<SignInPage> {
   }
 
   void _navigateToSignUpPage() {
-    Navigator.pushNamed(context, Routes.signUp);
+    Navigator.popAndPushNamed(context, Routes.signUp);
   }
 
   void _navigateToDashboardPage(dynamic course) {
-    Navigator.pushNamed(
+    Navigator.popAndPushNamed(
       context,
       Routes.dashboard,
       arguments: course,

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'data_source_impl.dart';
 
-final signUpDataSourceProvider = Provider<SignUpDataSource>(
+final signUpDataSourceProvider = Provider<SignUpDataSourceImp>(
   (ref) => SignUpDataSourceImp(),
 );
 

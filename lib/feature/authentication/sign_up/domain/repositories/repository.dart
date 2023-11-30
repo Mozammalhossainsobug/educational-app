@@ -3,7 +3,7 @@ import 'package:education_app/feature/authentication/sign_up/data/repositories/r
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final signUpRepositoryProvider = Provider<SignUpRepository>(
+final signUpRepositoryProvider = Provider<SignUpRepositoryImp>(
   (ref) {
     final dataSource = ref.read(signUpDataSourceProvider);
     return SignUpRepositoryImp(
