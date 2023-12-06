@@ -42,16 +42,24 @@ class _ProgressShowingWidgetState extends State<ProgressShowingWidget> {
       stream: _streamController.stream,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          return Column(
             children: [
-              Text(
-                formatDuration(snapshot.data!),
-                style: const TextStyle(fontSize: 12),
+              VideoProgressIndicator(
+                widget.videoPlayerController,
+                allowScrubbing: true,
               ),
-              Text(
-                formatDuration(widget.videoPlayerController.value.duration),
-                style: const TextStyle(fontSize: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    formatDuration(snapshot.data!),
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                  Text(
+                    formatDuration(widget.videoPlayerController.value.duration),
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ],
               ),
             ],
           );
@@ -67,5 +75,16 @@ class _ProgressShowingWidgetState extends State<ProgressShowingWidget> {
     _streamController.close();
     widget.videoPlayerController.removeListener(_updatePosition);
     super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(covariant ProgressShowingWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.videoPlayerController != oldWidget.videoPlayerController) {
+      // Reset the StreamController when the videoPlayerController changes
+      _streamController.close();
+      _streamController = StreamController<Duration>();
+      widget.videoPlayerController.addListener(_updatePosition);
+    }
   }
 }

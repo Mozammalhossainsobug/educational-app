@@ -140,12 +140,9 @@ class _PlayListPageState extends State<PlayListPage> {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
             child: Column(
               children: [
-                VideoProgressIndicator(
-                  _videoPlayerController,
-                  allowScrubbing: true,
-                ),
                 ProgressShowingWidget(
-                    videoPlayerController: _videoPlayerController),
+                  videoPlayerController: _videoPlayerController,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
