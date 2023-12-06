@@ -45,6 +45,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     );
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           const LogoAndTitle(title: 'Welcome Back'),

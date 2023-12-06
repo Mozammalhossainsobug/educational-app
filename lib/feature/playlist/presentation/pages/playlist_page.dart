@@ -1,5 +1,6 @@
 import 'package:education_app/core/utils/assets.dart';
 import 'package:education_app/feature/playlist/domain/entities/video_entity.dart';
+import 'package:education_app/feature/playlist/presentation/widgets/progress_showing_widget.dart';
 import 'package:education_app/feature/playlist/presentation/widgets/video_info_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,10 +58,10 @@ class _PlayListPageState extends State<PlayListPage> {
   void _playNextVideo() {
     if (_currentIndex < widget.playlist.length - 1) {
       setState(() {
-        _videoPlayerController.pause();
+        _videoPlayerController.dispose();
         _playPauseButtonIcon = Icons.play_arrow_outlined;
         _currentIndex++;
-        _initializePlayer(); // Reinitialize the player for the previous video
+        _initializePlayer();
         _videoPlayerController.pause();
       });
     }
@@ -81,10 +82,10 @@ class _PlayListPageState extends State<PlayListPage> {
   void _playPreviousVideo() {
     if (_currentIndex > 0) {
       setState(() {
-        _videoPlayerController.pause();
+        _videoPlayerController.dispose();
         _playPauseButtonIcon = Icons.play_arrow_outlined;
         _currentIndex--;
-        _initializePlayer(); // Reinitialize the player for the previous video
+        _initializePlayer();
         _videoPlayerController.pause();
       });
     }
@@ -108,13 +109,6 @@ class _PlayListPageState extends State<PlayListPage> {
     setState(() {
       bookmarks.add(_videoPlayerController.value.position);
     });
-  }
-
-  String formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
-    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
-    return "$twoDigitMinutes:$twoDigitSeconds";
   }
 
   @override
@@ -150,19 +144,8 @@ class _PlayListPageState extends State<PlayListPage> {
                   _videoPlayerController,
                   allowScrubbing: true,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      formatDuration(_videoPlayerController.value.position),
-                      style: const TextStyle(fontSize: 12),
-                    ),
-                    Text(
-                      formatDuration(_videoPlayerController.value.duration),
-                      style: const TextStyle(fontSize: 12),
-                    ),
-                  ],
-                ),
+                ProgressShowingWidget(
+                    videoPlayerController: _videoPlayerController),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

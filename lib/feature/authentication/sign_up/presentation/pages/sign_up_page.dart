@@ -51,7 +51,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: [
             const LogoAndTitle(title: 'Create an Account'),

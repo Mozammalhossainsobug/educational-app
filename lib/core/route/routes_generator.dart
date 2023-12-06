@@ -36,39 +36,6 @@ class RouteGenerator {
           ),
         );
 
-      // case Routes.welcome:
-      //   return MaterialPageRoute(builder: (_) => const SuccessPage());
-      //
-      // case Routes.webView:
-      //   return MaterialPageRoute(
-      //     builder: (_) => WebViewPage(
-      //       url: routeSettings.arguments! as String,
-      //     ),
-      //   );
-      //
-      // case Routes.resetPassword:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const SetNewPasswordPage(),
-      //   );
-      //
-      // case Routes.changePassword:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const ChangePasswordPage(),
-      //   );
-      //
-      // case Routes.updateProfile:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const UpdateProfilePage(),
-      //   );
-      //
-      // case Routes.identityVerification:
-      //   final arguments = routeSettings.arguments! as Map<String, dynamic>;
-      //   return MaterialPageRoute(
-      //     builder: (_) => IdentityVerificationPage(
-      //       isFromSignUp: arguments['isFromSignUp'] as bool,
-      //     ),
-      //   );
-
       default:
         return null;
     }
