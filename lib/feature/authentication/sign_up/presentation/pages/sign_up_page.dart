@@ -50,39 +50,40 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Column(
-          children: [
-            const LogoAndTitle(title: 'Create an Account'),
-            const SignUpFormBuildUp(),
-            Button(
-              width: size.width * .9,
-              onPressed: () => notifier.signUp(),
-              isLoading: state.status == BaseStatus.loading,
-              label: 'SIGN UP',
-              background: UIColors.branda,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Have an account already?'),
-                  GestureDetector(
-                    onTap: () {
-                      _navigateToSignInPage();
-                    },
-                    child: const Text(
-                      'Log in',
-                      style: TextStyle(
-                        color: UIColors.branda,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const LogoAndTitle(title: 'Create an Account'),
+              const SignUpFormBuildUp(),
+              Button(
+                width: size.width * .9,
+                onPressed: () => notifier.signUp(),
+                isLoading: state.status == BaseStatus.loading,
+                label: 'SIGN UP',
+                background: UIColors.branda,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Have an account already?'),
+                    GestureDetector(
+                      onTap: () {
+                        _navigateToSignInPage();
+                      },
+                      child: const Text(
+                        'Log in',
+                        style: TextStyle(
+                          color: UIColors.branda,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

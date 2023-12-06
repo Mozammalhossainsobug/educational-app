@@ -44,53 +44,58 @@ class _SignInPageState extends ConsumerState<SignInPage> {
       },
     );
 
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Column(
-        children: [
-          const LogoAndTitle(title: 'Welcome Back'),
-          Text(
-            'Login to continue',
-            style: TextStyle(
-              color: UIColors.branda,
-              fontSize: 11.h,
-              height: 2,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Column(
+          children: [
+            const LogoAndTitle(title: 'Welcome Back'),
+            Text(
+              'Login to continue',
+              style: TextStyle(
+                color: UIColors.branda,
+                fontSize: 11.h,
+                height: 2,
+              ),
             ),
-          ),
-          const SignInFormBuildUp(),
-          Button(
-            width: size.width * .9,
-            onPressed: () => notifier.signUp(),
-            isLoading: state.status == BaseStatus.loading,
-            label: 'LOG IN',
-            background: UIColors.branda,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 14),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Don't have an account? ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _navigateToSignUpPage();
-                  },
-                  child: const Text(
-                    'Sign up now',
+            const SignInFormBuildUp(),
+            Button(
+              width: size.width * .9,
+              onPressed: () => notifier.signUp(),
+              isLoading: state.status == BaseStatus.loading,
+              label: 'LOG IN',
+              background: UIColors.branda,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Don't have an account? ",
                     style: TextStyle(
-                      color: UIColors.branda,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                  GestureDetector(
+                    onTap: () {
+                      _navigateToSignUpPage();
+                    },
+                    child: const Text(
+                      'Sign up now',
+                      style: TextStyle(
+                        color: UIColors.branda,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
